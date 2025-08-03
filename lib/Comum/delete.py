@@ -2,16 +2,16 @@ from connection.connect import mysqlConnection
 
 def delete(table: str):
     
-    stringQuery = f"DELETE FROM {table}"
+    stringQuery =f"DELETE FROM {table}"
     
     print(stringQuery)
     exit()
     
     conn = mysqlConnection().con()
-    query = conn.cursor()
+    cursor =conn.cursor()
     
     try:
-        query.execute(stringQuery)
+        cursor.execute(stringQuery)
         result = conn.commit()
         conn.close()
         return result

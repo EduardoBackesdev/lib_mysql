@@ -15,17 +15,17 @@ def insert(table: str, columns: list[str], data: list["str"]):
         if i == len(data) - 1:
             d +=  "'" + data[i] + "'"
         else:        
-            d += "'" + columns[i] + "'" + ', '      
+            d += "'" + data[i] + "'" + ', '      
                             
-    stringQuery = f"INSERT INTO {table} ({c}) VALUES ({d});"
+    stringQuery =f"INSERT INTO {table} ({c}) VALUES ({d});"
     
     conn = mysqlConnection().con()
     
-    query = conn.cursor()
+    cursor = conn.cursor()
     
     try:
-        query.execute(stringQuery)
-        result = conn.commit()
+        cursor.execute(stringQuery)
+        result = cursor.commit()
         conn.close()
         return result      
     except Exception as e:

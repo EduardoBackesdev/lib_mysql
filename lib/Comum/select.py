@@ -8,15 +8,15 @@ def select(table: str, columns: list[str]):
             c += columns[i]
         else:        
             c += columns[i] + ', '
-    stringQuery = f"SELECT {c} FROM {table};"
+    stringQuery =f"SELECT {c} FROM {table};"
     
     conn = mysqlConnection().con()
     
-    query = conn.cursor()
+    cursor = conn.cursor()
     
     try:
-        query.execute(stringQuery)
-        result = query.fetchall()
+        cursor.execute(stringQuery)
+        result = cursor.fetchall()
         conn.close()
         return result
     except Exception as e:
