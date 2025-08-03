@@ -1,6 +1,7 @@
 from lib.Comum.select import select
 from lib.Comum.insert import insert
 from lib.Comum.delete import delete
+from lib.Comum.update import update
 
 class libmain:
     
@@ -16,4 +17,8 @@ class libmain:
     # Delete method
     def delete(self, table:str):
         return delete(table)
+    
+    # Update method
+    def update(self, table: str, columns: list[str], data: list[str]):
+        return update(table, columns, data)
     
