@@ -21,9 +21,6 @@ class mysqlConnection:
             return self.c
         except mysql.connector.Error as err:
             return err
-        
-    def close(self):
-        self.c.close()
             
         
             

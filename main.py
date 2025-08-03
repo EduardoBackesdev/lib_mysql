@@ -1,7 +1,7 @@
 from lib.libmain import libmain
 def main():
     lib = libmain()
-    lib.insert("users", ["name"], ["John Doe"])
+    lib.delete("users")
     
 
 if __name__ == "__main__":

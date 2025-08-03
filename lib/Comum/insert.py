@@ -16,11 +16,7 @@ def insert(table: str, columns: list[str], data: list["str"]):
             d +=  "'" + data[i] + "'"
         else:        
             d += "'" + columns[i] + "'" + ', '      
-            
-    print(f"INSERT INTO {table} ({c}) VALUES ({d});")   
-    
-    exit()     
-                
+                            
     stringQuery = f"INSERT INTO {table} ({c}) VALUES ({d});"
     
     conn = mysqlConnection().con()
