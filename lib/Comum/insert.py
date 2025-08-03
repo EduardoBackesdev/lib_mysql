@@ -25,7 +25,7 @@ def insert(table: str, columns: list[str], data: list["str"]):
     
     try:
         cursor.execute(stringQuery)
-        result = cursor.commit()
+        result = conn.commit()
         conn.close()
         return result      
     except Exception as e:
